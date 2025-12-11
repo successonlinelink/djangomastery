@@ -1,0 +1,110 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+    <div id="page-content">
+        
+        <header class="header-area">
+            {% include 'includes/nav.html' %}
+        </header>
+        
+        <main>
+            <section class="content-box-area mt-4">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-xl-4">
+                            <div class="card profile-card">
+                                <div class="card-body">
+                                    <!-- Side Profile -->
+                                    {% include 'includes/side-profile.html' %}
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="col-xl-8">
+                            <div class="card content-box-card">
+                                <div class="card-body">
+                                    <div class="top-info">
+                                        <div class="text">
+                                            <h1 class="main-title">Services I <span>Offered</span></h1>
+                                            <p>
+                                                Transforming Ideas into Innovative Reality, Elevate Your Vision with Our Expert
+                                                <b>Web Design and Development</b> Services!
+                                            </p>
+                                        </div>
+                                        <div class="available-btn">
+                                            <span><i class="fas fa-circle"></i> Available For Hire</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="services">
+                                        <div class="row g-4">
+                                            <div class="col-md-3 col-sm-6 col-6">
+                                                <div class="services-item text-center">
+                                                    <div class="image">
+                                                        <img src="{% static 'assets/img/icons/ui-ux.svg' %}" alt="ui-ux" />
+                                                    </div>
+                                                    <div class="text">
+                                                        <h3 class="title">Fintech Developer</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-6 col-6">
+                                                <div class="services-item text-center">
+                                                    <div class="image">
+                                                        <img src="{% static 'assets/img/icons/app.svg' %}" alt="app" />
+                                                    </div>
+                                                    <div class="text">
+                                                        <h3 class="title">Mobile App(PWA)</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-3 col-sm-6 col-6">
+                                                <div class="services-item text-center">
+                                                    <div class="image">
+                                                        <img src="{% static 'assets/img/icons/web-development.svg' %}" alt="web-development" />
+                                                    </div>
+                                                    <div class="text">
+                                                        <h3 class="title">Web Development</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-6 col-6">
+                                                <div class="services-item text-center">
+                                                    <div class="image">
+                                                        <img src="{% static 'assets/img/icons/view.svg' %}" alt="view" />
+                                                    </div>
+                                                    <div class="text">
+                                                        <h3 class="title">Web Design</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="block-image">
+                                            <img src="{% static 'assets/img/fin.jpg' %}" alt="blog-img-1" class="img-fluid w-100" />
+                                        </div>
+                                    </div>
+
+                                    <div class="work-together-slider">
+                                        <!-- Lets Work Together -->
+                                        {% include 'includes/work-together.html' %}
+                                                                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+{% endblock content %}

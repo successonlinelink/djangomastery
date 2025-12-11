@@ -1,0 +1,156 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+    
+    <div id="page-content">
+        
+        <header class="header-area">
+            {% include 'includes/nav.html' %}
+        </header>
+        
+
+        
+        <main>
+            <section class="content-box-area mt-4">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-xl-4">
+                            <div class="card profile-card">
+                                <div class="card-body">
+                                    <!-- Side Profile -->
+                                    {% include 'includes/side-profile.html' %}
+
+                                    <p class="mt-4 text-center">
+                                        {% if messages %}
+                                            <div class="alert alert-success mt-3">
+                                                {% for message in messages %}
+                                                    {{ message }}
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+
+
+                                        <script>
+                                            setTimeout(() => {
+                                                const alertBox = document.querySelector(".alert");
+                                                if (alertBox) {
+                                                    alertBox.style.display = "none";
+                                                }
+                                            }, 3000);
+                                        </script>
+                                    </p>
+                                    
+
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="col-xl-8">
+                            <div class="card content-box-card">
+                                <div class="card-body portfolio-card contact-card">
+                                    <div class="top-info">
+                                        <div class="text">
+                                            <h1 class="main-title">Let's 👋 <span>Work</span> Together</h1>
+                                            <p>
+                                                I'm here to help if you're searching for a Developer/Programmer to bring your idea to life.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-area">
+                                        <div class="leave-comments-area">
+
+                                            <div class="comments-box">
+                                                <h4 class="text-success" id="message-response"></h4>
+
+                                                <form id="contact-form-ajax" method="POST">
+                                                    {% csrf_token %}
+
+                                                    <div class="row gx-3">
+                                                        <div class="col-md-6">
+                                                            <div class="mb-4">
+                                                                <label class="form-label">Full Name</label>
+                                                                <input name="name" required type="text" class="form-control shadow-none" placeholder="Enter your full name" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-4">
+                                                                <label class="form-label">Email</label>
+                                                                <input name="email" required type="email" class="form-control shadow-none" placeholder="Enter your email" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-4">
+                                                                <label class="form-label">Subject</label>
+                                                                <input name="subject" required type="text" class="form-control shadow-none" placeholder="Subject" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-4">
+                                                                <label class="form-label">Phone</label>
+                                                                <input name="phone" required type="text" class="form-control shadow-none" placeholder="Phone" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="mb-4">
+                                                                <label class="form-label">Message</label>
+                                                                <textarea
+                                                                    name="message"
+                                                                    class="form-control shadow-none"
+                                                                    rows="4"
+                                                                    placeholder="Type details about your inquiry"
+                                                                ></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <button class="submit-btn" type="submit" id="contact-form-ajax" >
+                                                                Send Message
+                                                                <svg
+                                                                    class="icon"
+                                                                    width="20"
+                                                                    height="20"
+                                                                    viewBox="0 0 20 20"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                >
+                                                                    <path
+                                                                        d="M17.5 11.6665V6.6665H12.5"
+                                                                        stroke="white"
+                                                                        stroke-width="1.5"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round"
+                                                                    ></path>
+                                                                    <path
+                                                                        d="M17.5 6.6665L10 14.1665L2.5 6.6665"
+                                                                        stroke="white"
+                                                                        stroke-width="1.5"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round"
+                                                                    ></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+
+                                                <!-- <p class="ajax-response mb-0"></p> -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+{% endblock content %}

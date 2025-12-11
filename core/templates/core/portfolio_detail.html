@@ -1,0 +1,90 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+    
+    <div id="page-content">
+        
+        <header class="header-area">
+            {% include 'includes/nav.html' %}
+        </header>
+        
+        <main>
+            <section class="content-box-area mt-4">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-xl-4">
+                            <div class="card profile-card">
+                                <div class="card-body">
+                                    <!-- Side Profile -->
+                                    {% include 'includes/side-profile.html' %}
+                                </div>
+                            </div> 
+                        </div>
+
+
+                        <div class="col-xl-8">
+                            <div class="card content-box-card">
+                                <div class="card-body portfolio-card">
+                                    <div class="portfolio-details-area">
+                                        <div class="main-image">
+                                            <img src="{{post.image.url}}" alt="project-details-1" />
+                                        </div>
+                                        
+                                        <div class="more-info-block mt-4">
+                                            <h3 class="more-info-title" style="margin-bottom: -15px;">{{post.title}}</h3>
+                                            
+                                            <p> {{post.description|safe}} </p>
+                                        </div>
+
+                                        <div class="portfolio-details-text">
+                                            <div class="short-info">
+                                                
+                                                <div class="info-item">
+
+                                                    <a href="{{ post.site_url }}" target="_blank" class="website">
+                                                        {{post.title}}
+                                                        <svg
+                                                            class="arrow-up"
+                                                            width="14"
+                                                            height="15"
+                                                            viewBox="0 0 14 15"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path
+                                                                d="M9.91634 4.5835L4.08301 10.4168"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                            ></path>
+                                                            <path
+                                                                d="M4.66699 4.5835H9.91699V9.8335"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                            ></path>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="work-together-slider">
+                                        <!-- Lets Work Together -->
+                                        {% include 'includes/work-together.html' %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+        </main>
+                
+{% endblock content %}
